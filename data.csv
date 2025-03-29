@@ -1,0 +1,41 @@
+index,name,color,src,type,price,rentSingle,rentSet,rent1,rent2,rent3,rent4,rent5,housePrice,hotelPrice,loan,loanBack,owner
+0,Go,white,./img/go.png,public,200,0,0,0,0,0,0,0,0,0,0,0,bank
+1,Old Kent Road,brown,null,residential,60,2,4,10,30,90,160,250,50,50,30,33,bank
+2,Community Chest,white,./img/community-box.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+3,White Chapel Road,brown,null,residential,60,4,8,20,60,180,320,450,50,50,30,33,bank
+4,Income Tax,white,./img/tax-bag.png,public,200,0,0,0,0,0,0,0,0,0,0,0,bank
+5,Kings Cross Station,white,./img/locomotive-2.png,station,200,0,0,25,50,100,200,0,0,0,100,110,bank
+6,The Angle Islington,blue,null,residential,100,6,12,30,90,270,400,550,50,50,50,55,bank
+7,Chance,white,./img/question.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+8,Euston Road,blue,null,residential,100,6,12,30,90,270,400,550,50,50,50,55,bank
+9,Pentonville Road,blue,null,residential,120,8,16,40,100,300,450,600,50,50,60,66,bank
+10,Just Visiting,white,./img/jail.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+11,Pall Mall,pink,null,residential,140,10,20,50,150,450,625,750,100,100,70,77,bank
+12,Electricity Company,white,./img/lamp.png,utility,150,0,0,0,0,0,0,0,0,0,75,83,bank
+13,White Hall,pink,null,residential,140,10,20,50,150,450,625,750,100,100,70,77,bank
+14,Northumber Land,pink,null,residential,160,12,24,60,180,500,700,900,100,100,80,88,bank
+15,Marylebone Station,white,./img/locomotive-2.png,station,200,0,0,25,50,100,200,0,0,0,100,110,bank
+16,Bow Street,orange,null,residential,180,14,28,70,200,550,750,950,100,100,90,99,bank
+17,Community Chest,white,./img/community-box.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+18,Marlborough Street,orange,null,residential,180,14,28,70,200,550,750,950,100,100,90,99,bank
+19,Vine Street,orange,null,residential,200,16,32,80,220,600,800,1000,100,100,100,110,bank
+20,Free Parking,white,./img/parking.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+21,Strand,red,null,residential,220,18,36,90,250,700,875,1050,150,150,110,121,bank
+22,Chance,white,./img/question.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+23,Fleet Street,red,null,residential,220,18,36,90,250,700,875,1050,150,150,110,121,bank
+24,Trafalgar Square,red,null,residential,240,20,40,100,300,750,925,1100,150,150,120,132,bank
+25,Fenchurch Station,white,./img/locomotive-2.png,station,200,0,0,25,50,100,200,0,0,0,100,110,bank
+26,Liecester Square,yellow,null,residential,260,22,44,110,330,800,975,1150,150,150,130,143,bank
+27,Coventry Street,white,null,residential,260,22,44,110,330,800,975,1150,150,150,130,143,bank
+28,Water Works,yellow,./img/water-works.png,utility,150,0,0,0,0,0,0,0,0,0,75,83,bank
+29,Piccadilly,yellow,null,residential,280,24,48,120,360,850,1025,1200,150,150,140,154,bank
+30,Go To Jail,white,./img/policeman.png,public,50,0,0,0,0,0,0,0,0,0,0,0,bank
+31,Regent Street,green,null,residential,300,26,52,130,390,900,1100,1275,200,200,150,165,bank
+32,Oxford Street,green,null,residential,300,26,52,130,390,900,1100,1275,200,200,150,165,bank
+33,Community Chest,white,./img/community-box.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+34,Bond Street,green,null,residential,320,28,56,150,450,1000,1200,1400,200,200,160,175,bank
+35,Liverpool Station,white,./img/locomotive-2.png,station,200,0,0,25,50,100,200,0,0,0,100,110,bank
+36,Chance,white,./img/question.png,public,0,0,0,0,0,0,0,0,0,0,0,0,bank
+37,Park Lane,violet,null,residential,350,35,70,175,500,1100,1300,1500,200,200,175,193,bank
+38,Luxury Tax,white,./img/tax.png,public,75,0,0,0,0,0,0,0,0,0,0,0,bank
+39,Mayfair,violet,null,residential,400,50,100,200,600,1400,1700,2000,200,200,200,220,bank

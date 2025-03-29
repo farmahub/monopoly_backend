@@ -1,0 +1,48 @@
+### register
+POST http://localhost:8000/api/account/
+Content-Type: application/json
+
+{
+    "email": "some_1@example.com",
+    "password": "some123456"
+}
+
+### obtain
+POST http://localhost:8000/api/token/
+Content-Type: application/json
+
+# {
+#     "email": "admin@example.com",
+#     "password": "admin"
+# }
+
+{
+    "email": "some_1@example.com",
+    "password": "some123456"
+}
+
+### get_properties
+GET http://localhost:8000/api/properties/
+Content-Type: application/json
+
+### get_players
+GET http://localhost:8000/api/players/
+Content-Type: application/json
+
+### get_players_proprty
+GET http://localhost:8000/api/players/property/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMTkxMjExLCJpYXQiOjE3NDMxODQwMTEsImp0aSI6IjNhYzIzNmQxMWZjMzRmZGQ4ODU4Yjk1OTlmYzEzNjBmIiwidXNlcl9pZCI6IjcxNTAxNWZmLWY5N2UtNDc4Ny1iMzVmLWZmOWI4MGJmZTg4MiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImJhbmsifQ.NNoRk-7-t65iyg4SCRy6tnjp7RNGsKVAHj9rIWSoS9Q
+
+### buy_property
+POST http://localhost:8000/api/players/property/buy/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjAyMzA4LCJpYXQiOjE3NDMxOTUxMDgsImp0aSI6IjA3NzU5YWQ3YjI4MDQwMzI4Mzg3NTlkNmMzZmMyZGY4IiwidXNlcl9pZCI6IjYxZTk3OGE4LTVkMWQtNDBiZS1hZmRmLTgwMGE5ZGFiMjE3OSIsImVtYWlsIjoic29tZV8xQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJwbGF5ZXJfMSJ9.EtNpoyNx4QQfYgf32J8jQ2gpzPj7DMibKZWy90a2F-c
+
+{
+    "property_id": "e6e2f08e17ce4828976e5e09087923c8"
+}
+
+
+
+
