@@ -42,7 +42,7 @@ class Property(models.Model):
     loan_back_amount = models.IntegerField(default=0)
     house_price = models.IntegerField(default=0, blank=True, null=True)
     hotel_price = models.IntegerField(default=0, blank=True, null=True)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="properties")  # user.properties.all()
 
     def __str__(self):
         return f"{self.position}. {self.name} - {self.owner}'s property"

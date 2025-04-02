@@ -1,19 +1,20 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework_simplejwt.views import TokenObtainPairView
-
 
 from .models import User
-from .serializers import UserSerializer, CustomTokenObtainPairSerializer
+from .serializers import UserSerializer
 
 
-class RegisterUserView(APIView):
+class RegisterView(APIView):
     permission_classes = []
+
     def post(self, request, *args, **kwargs):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            user = User(email=serializer.validated_data["email"])
+            user.set_password(serializer.validated_data["password"])
+            user.save()
             return Response(
                 {"success": "User created successfully"},
                 status=status.HTTP_201_CREATED,
@@ -23,7 +24,3 @@ class RegisterUserView(APIView):
                 {"error": "invalide serializer"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        
-
-class CustomTokenObtainPairView(TokenObtainPairView):
-    serializer_class = CustomTokenObtainPairSerializer

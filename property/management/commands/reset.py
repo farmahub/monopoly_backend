@@ -13,18 +13,23 @@ class Command(BaseCommand):
     )
 
     def handle(self, *args, **options):
+        users = User.objects.all()
+        properties = Property.objects.all()
         try:
-            users = User.objects.all()
-            properties = Property.objects.all()
-
             for user in users:
                 player = Player.objects.get(user_id=user.id)
+                print(player)
                 if user.username == "bank":
                     player.cash = 1000000
-                    player.save()
                 else:
                     player.cash = 1500
-                    player.save()
+
+                player.posistion = 0
+                player.jail_free_card = 0
+                player.house = 0
+                player.jotel = 0
+                player.imprisoned = False
+                player.save()
 
             for property in properties:
                 property.owner = User.objects.get(username="bank")
@@ -35,4 +40,4 @@ class Command(BaseCommand):
             )
 
         except Exception as e:
-            self.stdout.write(self.style.ERROR("RESET SITUATION IS FAILED"))
+            self.stdout.write(self.style.ERROR(e))

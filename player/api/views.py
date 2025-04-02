@@ -36,28 +36,3 @@ class PlayerPropertyApiView(APIView):
             )
         else:
             return Response({"error": "user is not authenticated"})
-
-
-class PlayerBuyPropertyApiView(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def post(self, request):
-        player = request.user.player
-        property_id = request.data.get("property_id")
-
-        try:
-            property = Property.objects.get(id=property_id)
-        except Property.DoesNotExist:
-            return Response(
-                {
-                    "Error": "Property does not exist.",
-                },
-                status=status.HTTP_404_NOT_FOUND,
-            )
-
-        message = player.buy_property(property)
-        return Response(
-            {
-                "message": message,
-            }
-        )
