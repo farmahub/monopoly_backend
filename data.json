@@ -5,7 +5,7 @@
     "fields": {
         "password": "pbkdf2_sha256$870000$eHpJU7TLs4P8LrsaxGNx4v$KXofzlnjiMJ54izM1BfYP+tPAexq3TVWhfRtKvzwrUE=",
         "email": "some_1@example.com",
-        "username": "player_1",
+        "username": "wallet_1",
         "avatar": "",
         "first_name": null,
         "last_name": null,
@@ -26,7 +26,7 @@
     "fields": {
         "password": "pbkdf2_sha256$870000$EmArr5DCYI3ujGlbWYAXJv$ZJsfXFbPMOP2AhiL61ldxKsXx5dEUIKfGBnUXKMVZnY=",
         "email": "admin@example.com",
-        "username": "bank",
+        "username": "wallet_bank",
         "avatar": "",
         "first_name": null,
         "last_name": null,
@@ -36,6 +36,27 @@
         "is_staff": true,
         "date_joined": "2025-03-26T19:19:53.814Z",
         "last_login": "2025-03-31T10:11:12.604Z",
+        "friends": [],
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.user",
+    "pk": "fb4ea5be-f1f7-4c26-99a1-953ac054d2b1",
+    "fields": {
+        "password": "pbkdf2_sha256$870000$hX49xEYdwCGMmyldCiG6Ek$WyMU/6/V0UIiaoqBg6KJ7vzbSKB3qvNiQmHQtRtrjAI=",
+        "email": "some_2@example.com",
+        "username": "wallet_2",
+        "avatar": "",
+        "first_name": null,
+        "last_name": null,
+        "friends_count": 0,
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2025-04-02T11:06:40.267Z",
+        "last_login": null,
         "friends": [],
         "groups": [],
         "user_permissions": []
@@ -61,7 +82,8 @@
         "loan_back_amount": 77,
         "house_price": 100,
         "hotel_price": 100,
-        "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
+        "dwelling_counts": 3,
+        "owner": "61e978a8-5d1d-40be-afdf-800a9dab2179"
     }
 },
 {
@@ -84,6 +106,7 @@
         "loan_back_amount": 121,
         "house_price": 150,
         "hotel_price": 150,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -107,6 +130,7 @@
         "loan_back_amount": 175,
         "house_price": 200,
         "hotel_price": 200,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -130,7 +154,8 @@
         "loan_back_amount": 77,
         "house_price": 100,
         "hotel_price": 100,
-        "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
+        "dwelling_counts": 2,
+        "owner": "61e978a8-5d1d-40be-afdf-800a9dab2179"
     }
 },
 {
@@ -153,6 +178,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -176,6 +202,7 @@
         "loan_back_amount": 110,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -199,6 +226,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -222,6 +250,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -245,6 +274,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -268,6 +298,7 @@
         "loan_back_amount": 143,
         "house_price": 150,
         "hotel_price": 150,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -291,6 +322,7 @@
         "loan_back_amount": 83,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -314,6 +346,7 @@
         "loan_back_amount": 165,
         "house_price": 200,
         "hotel_price": 200,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -337,6 +370,7 @@
         "loan_back_amount": 154,
         "house_price": 150,
         "hotel_price": 150,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -360,6 +394,7 @@
         "loan_back_amount": 193,
         "house_price": 200,
         "hotel_price": 200,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -383,6 +418,7 @@
         "loan_back_amount": 121,
         "house_price": 150,
         "hotel_price": 150,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -406,6 +442,7 @@
         "loan_back_amount": 66,
         "house_price": 50,
         "hotel_price": 50,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -429,6 +466,7 @@
         "loan_back_amount": 165,
         "house_price": 200,
         "hotel_price": 200,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -452,6 +490,7 @@
         "loan_back_amount": 55,
         "house_price": 50,
         "hotel_price": 50,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -475,6 +514,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -498,6 +538,7 @@
         "loan_back_amount": 99,
         "house_price": 100,
         "hotel_price": 100,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -521,6 +562,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -544,6 +586,7 @@
         "loan_back_amount": 132,
         "house_price": 150,
         "hotel_price": 150,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -567,6 +610,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -590,6 +634,7 @@
         "loan_back_amount": 110,
         "house_price": 100,
         "hotel_price": 100,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -613,6 +658,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -636,6 +682,7 @@
         "loan_back_amount": 83,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -659,7 +706,8 @@
         "loan_back_amount": 110,
         "house_price": 0,
         "hotel_price": 0,
-        "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
+        "dwelling_counts": 0,
+        "owner": "61e978a8-5d1d-40be-afdf-800a9dab2179"
     }
 },
 {
@@ -682,7 +730,8 @@
         "loan_back_amount": 110,
         "house_price": 0,
         "hotel_price": 0,
-        "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
+        "dwelling_counts": 0,
+        "owner": "61e978a8-5d1d-40be-afdf-800a9dab2179"
     }
 },
 {
@@ -705,7 +754,8 @@
         "loan_back_amount": 88,
         "house_price": 100,
         "hotel_price": 100,
-        "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
+        "dwelling_counts": 2,
+        "owner": "61e978a8-5d1d-40be-afdf-800a9dab2179"
     }
 },
 {
@@ -728,6 +778,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -751,6 +802,7 @@
         "loan_back_amount": 220,
         "house_price": 200,
         "hotel_price": 200,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -774,6 +826,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -797,6 +850,7 @@
         "loan_back_amount": 143,
         "house_price": 150,
         "hotel_price": 150,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -820,6 +874,7 @@
         "loan_back_amount": 110,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -843,6 +898,7 @@
         "loan_back_amount": 33,
         "house_price": 50,
         "hotel_price": 50,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -866,6 +922,7 @@
         "loan_back_amount": 33,
         "house_price": 50,
         "hotel_price": 50,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -889,6 +946,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -912,7 +970,8 @@
         "loan_back_amount": 55,
         "house_price": 50,
         "hotel_price": 50,
-        "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
+        "dwelling_counts": 0,
+        "owner": "61e978a8-5d1d-40be-afdf-800a9dab2179"
     }
 },
 {
@@ -935,6 +994,7 @@
         "loan_back_amount": 0,
         "house_price": 0,
         "hotel_price": 0,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 },
@@ -958,6 +1018,7 @@
         "loan_back_amount": 99,
         "house_price": 100,
         "hotel_price": 100,
+        "dwelling_counts": 0,
         "owner": "715015ff-f97e-4787-b35f-ff9b80bfe882"
     }
 }

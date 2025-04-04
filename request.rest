@@ -3,7 +3,7 @@ POST http://localhost:8000/account/
 Content-Type: application/json
 
 {
-    "email": "some_5@example.com",
+    "email": "some_2@example.com",
     "password": "some123456"
 }
 
@@ -18,19 +18,28 @@ Content-Type: application/json
 
 
 ### player_jail_action
-POST http://localhost:8000/actions/player/jail-action/
+POST http://localhost:8000/actions/wallet/jail-action/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNTI3ODE5LCJpYXQiOjE3NDM1MjA2MTksImp0aSI6IjA5N2MyYzcxMzkzMTQ4NWM4NjFlYjczMDZjYTAzZjdiIiwidXNlcl9pZCI6IjcxNTAxNWZmLWY5N2UtNDc4Ny1iMzVmLWZmOWI4MGJmZTg4MiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImJhbmsifQ.YRMavPUZ2uInNL4IiC2BmvKQcMe-3bV_buNvJ9bJmPc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNjAzMTk5LCJpYXQiOjE3NDM1OTU5OTksImp0aSI6IjAyZTNjZWY2MjUwNDRjNDQ5YTc5YTRiZWQ4M2I1ODBhIiwidXNlcl9pZCI6IjcxNTAxNWZmLWY5N2UtNDc4Ny1iMzVmLWZmOWI4MGJmZTg4MiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImJhbmsifQ.ZZ1QD69siWqMS23KZ5fAcPqg94BDwJHqY_iTF832FCc
 
 {
     "option": "roll_dice"
 }
 
-### player_earn_action
-POST http://localhost:8000/actions/player/earn-action/
+### create_room
+POST http://localhost:8000/api/room/create-room/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNTI3ODE5LCJpYXQiOjE3NDM1MjA2MTksImp0aSI6IjA5N2MyYzcxMzkzMTQ4NWM4NjFlYjczMDZjYTAzZjdiIiwidXNlcl9pZCI6IjcxNTAxNWZmLWY5N2UtNDc4Ny1iMzVmLWZmOWI4MGJmZTg4MiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImJhbmsifQ.YRMavPUZ2uInNL4IiC2BmvKQcMe-3bV_buNvJ9bJmPc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzk3NTU3LCJpYXQiOjE3NDM3OTAzNTcsImp0aSI6IjI2ZTE0YmY3NzVlZTRjYzJhYWQwMjdlYmY0YTgzYTY3IiwidXNlcl9pZCI6IjcxNTAxNWZmLWY5N2UtNDc4Ny1iMzVmLWZmOWI4MGJmZTg4MiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6IndhbGxldF9iYW5rIn0.oo18omIAhIL5z05aBHn8NrptlSS-rOEfvQ4LT02LzGo
 
 {
-    "amount": 500
+    "name": "mygame"
+}
+
+### create_ticket
+POST http://localhost:8000/api/room/create-ticket/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzk3NTU3LCJpYXQiOjE3NDM3OTAzNTcsImp0aSI6IjI2ZTE0YmY3NzVlZTRjYzJhYWQwMjdlYmY0YTgzYTY3IiwidXNlcl9pZCI6IjcxNTAxNWZmLWY5N2UtNDc4Ny1iMzVmLWZmOWI4MGJmZTg4MiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6IndhbGxldF9iYW5rIn0.oo18omIAhIL5z05aBHn8NrptlSS-rOEfvQ4LT02LzGo
+
+{
+    "room": "b9d78bb0f26348ef9c09b63d4db9ab68"
 }

@@ -42,7 +42,39 @@ class Property(models.Model):
     loan_back_amount = models.IntegerField(default=0)
     house_price = models.IntegerField(default=0, blank=True, null=True)
     hotel_price = models.IntegerField(default=0, blank=True, null=True)
+    dwelling_counts = models.IntegerField(default=0)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="properties")  # user.properties.all()
 
     def __str__(self):
-        return f"{self.position}. {self.name} - {self.owner}'s property"
+        return f"{self.position}. {self.name}"
+    
+    def check_color_set(self):
+        owner = self.owner
+        owners = []
+        properties = Property.objects.filter(color=self.color, type=self.type)
+        
+        for prop in properties:
+            owner = prop.owner
+            owners.append(owner)
+
+        if properties[0].type == "station":
+            if len(owners) == 1:
+                return 1
+            
+            elif len(owners) == 2:
+                return 2
+            
+            elif len(owners) == 3:
+                return 3
+            
+            elif len(owners) == 4:
+                return 4
+            
+            return True
+
+        owners = list(dict.fromkeys(owners))
+        
+        if len(owners) != 1:
+            return False
+        
+        return True

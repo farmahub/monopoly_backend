@@ -80,3 +80,15 @@ class User(AbstractBaseUser, PermissionsMixin):
             return "https://picsum.photos/200/200"
 
 
+class FriendshipRequset(models.Model):
+    STATUS_CHOICE = [
+        ('sent', 'Sent'),
+        ('accepted', 'Accepted'),
+        ('rejeted', 'Rejected'),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    created_for = models.ForeignKey(User, on_delete=models.CASCADE, related_name="recieved_request")
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="created_request")
+    status = models.CharField(max_length=10, choices=STATUS_CHOICE, default='sent')

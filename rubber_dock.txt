@@ -53,3 +53,6 @@ landing_types = {
     "utility": [buy, rent],         # 2 times
     "public": [earn, chance, tax],  # 11 times
 }
+
+there is a room, there is a ticket. the person who creates the room coudld generate tickets.
+the person who receives the ticket could join the room.

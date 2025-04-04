@@ -6,6 +6,7 @@ urlpatterns = [
     path("account/", include("account.urls")),  # registration_handling
     path("api/account/", include("account.api.urls")),  # token_handling
     path("api/property/", include("property.api.urls")),
-    path("api/player/", include("player.api.urls")),
-    path("actions/player/", include("player.actions.urls")),
+    path("api/wallet/", include("wallet.api.urls")),
+    path("api/room/", include("room.api.urls")),
+    path("actions/wallet/", include("wallet.actions.urls")),
 ]

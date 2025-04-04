@@ -22,9 +22,30 @@ class PropertyAdmin(admin.ModelAdmin):
         "house_price",
         "hotel_price",
         "owner",
+        "dwelling_counts"
     ]
     list_display_links = ('position','name',)
     ordering = ["position",]
+    readonly_fields = [
+        "position",
+        "name",
+        "color",
+        "type",
+        "price",
+        "rent_single",
+        "rent_set",
+        "rent_1",
+        "rent_2",
+        "rent_3",
+        "rent_4",
+        "rent_5",
+        "loan_amount",
+        "loan_back_amount",
+        "house_price",
+        "hotel_price",
+        "owner",
+        "dwelling_counts"
+    ]
 
 
 admin.site.register(Property, PropertyAdmin)
