@@ -9,4 +9,5 @@ urlpatterns = [
     path("api/wallet/", include("wallet.api.urls")),
     path("api/room/", include("room.api.urls")),
     path("actions/wallet/", include("wallet.actions.urls")),
+    path("api/test/", include("main.api.urls"))
 ]

@@ -17,20 +17,19 @@ class RoomAdmin(admin.ModelAdmin):
         "is_closed",
         "is_finished",
     ]
-    exclude = ["players"]
 
 
 class TicketAdmin(admin.ModelAdmin):
     list_display = [
         "id",
         "room",
-        "share_link",
+        "issued_to",
         "created_at",
         "is_expired",
+        "is_used",
     ]
     readonly_fields = [
-        "created_at",
-        "is_expired",
+        "is_used",
     ]
 
 

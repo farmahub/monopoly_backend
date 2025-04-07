@@ -3,6 +3,8 @@ from datetime import timedelta
 
 from django.utils import timezone
 from django.db import models
+from django.core.mail import send_mail
+from django.utils.html import format_html
 
 from account.models import User
 
@@ -24,21 +26,52 @@ class Room(models.Model):
 
 class Ticket(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="room", null=True)
+    room = models.ForeignKey(
+        Room, on_delete=models.CASCADE, related_name="room", null=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
-
-    @property
-    def share_link(self):
-        link = "Ticket" + "-" + str(self.id).split("-")[-1] + "-" + "Farma" + "-" + str(self.room.id).split("-")[-1]
-        return link
+    issued_to = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user", null=True
+    )
+    is_used = models.BooleanField(default=False)
 
     @property
     def is_expired(self):
-        expiration_time = self.created_at + timedelta(hours=1)
+        if self.created_at:
+            expiration_time = self.created_at + timedelta(minutes=60)
 
-        return (
-            timezone.now() > expiration_time
-        )  # returns true when "now" gets passed of expiration_time
-    
+            return (
+                timezone.now() > expiration_time
+            )  # returns true when "now" gets passed of expiration_time
+
     def __str__(self):
-        return self.share_link
+        return f"{self.id}"
+    
+    def send_ticket_email(self, recipient_email):
+        subject = "You're Invited to Join a Room!"
+        plaintext_message = f"Hi,\n\nYou've been invited to join a room on Farma!\n\nUse this link to register and join: http://localhost:8000/account/\n\nThis link will expire in five minutes."
+        from_email = "farmamailbox@gmail.com"
+        recipient_list = [recipient_email]
+        html_message = format_html(
+            f"""
+            <html>
+            <body>
+            <p>Hi,</p>
+            <p>You've been invited to join a room on Farma!</p>
+            <p>Click the link below to register and join:</p>
+            <p><a href='http://localhost:8000/account/'>Join using this link</a></p>
+            <p>This link will expire in five minutes.</p>
+            </body>
+            </html>
+            """
+        )
+
+        send_mail(
+            subject,
+            plaintext_message,
+            from_email,
+            recipient_list,
+            html_message=html_message,
+            auth_user="farmamailbox@gmail.com",
+            auth_password="wmmh nunx wilp vuii",
+        )

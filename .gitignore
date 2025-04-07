@@ -1,2 +1,11 @@
 # Ignore virtual environments
 venv/
+
+# Ignore .env
+*.env
+
+# Ignore .csv
+*.csv
+
+# Ignore rest
+*.rest
