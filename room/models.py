@@ -13,15 +13,45 @@ class Room(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
     admin = models.ForeignKey(User, on_delete=models.CASCADE, related_name="admin")
-    player = models.ManyToManyField(User, related_name="player", blank=True)
+    players = models.ManyToManyField(User, related_name="players", blank=True)
     min_players = models.IntegerField(default=2, editable=False)
     max_players = models.IntegerField(default=6, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     is_closed = models.BooleanField(default=False)
-    is_finished = models.BooleanField(default=False)
+    is_running = models.BooleanField(default=False)
+    current_turn_player = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return f"{self.name}"
+    
+    def close_room(self):
+        if 2 <= self.players.count() <=6:
+            self.is_closed = True
+        else:
+            self.is_closed = False
+        self.save()
+    
+    def start_game(self):
+        if not self.is_closed:
+            return f"{self.room} is not closed"
+        else:
+            self.is_running = True
+        self.save()
+
+    def pause_game(self):
+        if self.is_running:
+            self.is_running = False
+        else:
+            self.is_running = True
+        self.save()
+
+    def next_turn(self):
+        players_list = list(self.players.all())
+        if self.current_turn_player in players_list:
+            current_index = players_list.index(self.current_turn_player)
+            next_index = (current_index + 1) % len(players_list)
+            self.current_turn_player = players_list[next_index]
+            self.save()
 
 
 class Ticket(models.Model):
@@ -49,7 +79,7 @@ class Ticket(models.Model):
     
     def send_ticket_email(self, recipient_email):
         subject = "You're Invited to Join a Room!"
-        plaintext_message = f"Hi,\n\nYou've been invited to join a room on Farma!\n\nUse this link to register and join: http://localhost:8000/account/\n\nThis link will expire in five minutes."
+        plaintext_message = f"Hi,\n\nYou've been invited to join a room on Farma!\n\nUse this link to register and join: http://localhost:8000/api/room/use-ticket/{self.id}/\n\nThis link will expire in five minutes."
         from_email = "farmamailbox@gmail.com"
         recipient_list = [recipient_email]
         html_message = format_html(
@@ -59,7 +89,7 @@ class Ticket(models.Model):
             <p>Hi,</p>
             <p>You've been invited to join a room on Farma!</p>
             <p>Click the link below to register and join:</p>
-            <p><a href='http://localhost:8000/account/'>Join using this link</a></p>
+            <p><a href='http://localhost:8000/api/room/use-ticket/{self.id}/'>Join using this link</a></p>
             <p>This link will expire in five minutes.</p>
             </body>
             </html>

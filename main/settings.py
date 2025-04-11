@@ -54,8 +54,8 @@ ROOT_URLCONF = "main.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
+        "DIRS": [BASE_DIR / "templates"],  # This tells Django to look in the "templates" folder at the project root.
+        "APP_DIRS": True,  # Ensures Django will also look in app-specific templates folders.
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -131,6 +131,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ],
+    # "DEFAULT_RENDERER_CLASSES": [
+    #     'rest_framework.renderers.BrowsableAPIRenderer',
+    # ]
 }
 
 SIMPLE_JWT = {

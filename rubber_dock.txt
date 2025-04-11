@@ -1,0 +1,9 @@
+class User():
+    email = required
+    password = required
+
+
+user_1 = User(email=..., password=...)
+
+
+user = User.objects.create(email, password)

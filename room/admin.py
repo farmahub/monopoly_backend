@@ -9,13 +9,13 @@ class RoomAdmin(admin.ModelAdmin):
         "admin",
         "created_at",
         "is_closed",
-        "is_finished",
+        "is_running",
         "min_players",
         "max_players",
     ]
     readonly_fields = [
         "is_closed",
-        "is_finished",
+        "is_running",
     ]
 
 
