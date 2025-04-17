@@ -36,6 +36,11 @@ class Command(BaseCommand):
                         house_price=int(row["housePrice"]),
                         hotel_price=int(row["hotelPrice"]),
                         owner=User.objects.get(email="admin@example.com"),
+                        colStart=int(row["colStart"]),
+                        rowStart=int(row["rowStart"]),
+                        colSpan=int(row["colSpan"]),
+                        rowSpan=int(row["rowSpan"]),
+                        rotation=int(row["rotation"]),
                     ),
             self.stdout.write(self.style.SUCCESS("Data imported successfully!"))
 

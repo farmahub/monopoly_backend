@@ -4,11 +4,13 @@ from ..models import Property
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
 from django.http import Http404
 
 
-class PropertyApiView(APIView):
+class PropertiesApiView(APIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     def get(self, request, format=None):
         properties = Property.objects.all()
         serializer = PropertySerializer(properties, many=True)
