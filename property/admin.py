@@ -23,11 +23,6 @@ class PropertyAdmin(admin.ModelAdmin):
         "hotel_price",
         "owner",
         "dwelling_counts",
-        "colStart",
-        "rowStart",
-        "colSpan",
-        "rowSpan",
-        "rotation",
     ]
     list_display_links = ('position','name',)
     ordering = ["position",]
@@ -50,11 +45,6 @@ class PropertyAdmin(admin.ModelAdmin):
         "hotel_price",
         "owner",
         "dwelling_counts",
-        "colStart",
-        "rowStart",
-        "colSpan",
-        "rowSpan",
-        "rotation",
     ]
 
 

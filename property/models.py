@@ -44,11 +44,6 @@ class Property(models.Model):
     hotel_price = models.IntegerField(default=0, blank=True, null=True)
     dwelling_counts = models.IntegerField(default=0)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="properties")  # user.properties.all()
-    colStart = models.IntegerField(default=0, blank=True, null=True)
-    rowStart = models.IntegerField(default=0, blank=True, null=True)
-    colSpan = models.IntegerField(default=0, blank=True, null=True)
-    rowSpan = models.IntegerField(default=0, blank=True, null=True)
-    rotation = models.IntegerField(default=0, blank=True, null=True)
     image = models.ImageField(upload_to="img/", blank=True, null=True)
 
     def __str__(self):
